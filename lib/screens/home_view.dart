@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:video_conferencing/screens/meet.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
+  const HomeView({Key? key}) : super(key: key);
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   final User? user = FirebaseAuth.instance.currentUser;
-
-  HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +27,6 @@ class HomeView extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
           centerTitle: true,
           actions: [
             Padding(
@@ -30,7 +35,7 @@ class HomeView extends StatelessWidget {
                 radius: 20,
                 backgroundImage: NetworkImage(user!.photoURL ?? ''),
               ),
-            )
+            ),
           ],
         ),
         body: Padding(
@@ -42,7 +47,8 @@ class HomeView extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        // Handle new meeting button press
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Meet()));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(14, 114, 236, 1),
@@ -62,9 +68,7 @@ class HomeView extends StatelessWidget {
                   const SizedBox(width: 20),
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: () {
-                        // Handle join meeting button press
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(14, 114, 236, 1),
                         shape: RoundedRectangleBorder(
@@ -102,32 +106,33 @@ class HomeView extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
                     RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: "Click",
-                              style: GoogleFonts.poppins(),
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Click",
+                            style: GoogleFonts.poppins(),
+                          ),
+                          TextSpan(
+                            text: " New Meeting ",
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.bold,
                             ),
-                            TextSpan(
-                              text: " New Meeting ",
-                              style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.bold,
-                              ),
+                          ),
+                          const TextSpan(text: ' to start a new meeting or '),
+                          TextSpan(
+                            text: "Join Meeting",
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.bold,
                             ),
-                            const TextSpan(text: ' to start a new meeting or '),
-                            TextSpan(
-                              text: "Join Meeting",
-                              style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            TextSpan(
-                              text: ' to join an existing one.',
-                              style: GoogleFonts.poppins(),
-                            ),
-                          ],
-                        )),
+                          ),
+                          TextSpan(
+                            text: ' to join an existing one.',
+                            style: GoogleFonts.poppins(),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),

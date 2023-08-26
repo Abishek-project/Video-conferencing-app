@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:video_conferencing/resources/auth_service.dart';
-import 'package:video_conferencing/screens/home_view.dart';
 import 'package:video_conferencing/screens/login_screen.view.dart';
 import 'package:video_conferencing/screens/main_view.dart';
 

@@ -8,6 +8,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.5"
+  agora_rtc_engine:
+    dependency: "direct main"
+    description:
+      name: agora_rtc_engine
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.2.2"
+  agora_rtm:
+    dependency: transitive
+    description:
+      name: agora_rtm
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.5.8"
+  agora_uikit:
+    dependency: "direct main"
+    description:
+      name: agora_uikit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   async:
     dependency: transitive
     description:
@@ -205,6 +226,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.2"
+  iris_method_channel:
+    dependency: transitive
+    description:
+      name: iris_method_channel
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   js:
     dependency: transitive
     description:
@@ -212,6 +240,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.4"
+  json_annotation:
+    dependency: transitive
+    description:
+      name: json_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.8.0"
   lints:
     dependency: transitive
     description:
@@ -289,6 +324,41 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.0"
+  permission_handler:
+    dependency: "direct main"
+    description:
+      name: permission_handler
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "10.4.3"
+  permission_handler_android:
+    dependency: transitive
+    description:
+      name: permission_handler_android
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "10.3.3"
+  permission_handler_apple:
+    dependency: transitive
+    description:
+      name: permission_handler_apple
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "9.1.4"
+  permission_handler_platform_interface:
+    dependency: transitive
+    description:
+      name: permission_handler_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.11.3"
+  permission_handler_windows:
+    dependency: transitive
+    description:
+      name: permission_handler_windows
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.3"
   platform:
     dependency: transitive
     description:

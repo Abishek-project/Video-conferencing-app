@@ -5,7 +5,10 @@ import 'package:video_conferencing/screens/meet_history.dart';
 import 'package:video_conferencing/screens/profile_view.dart';
 
 class MainView extends StatefulWidget {
+  const MainView({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MainViewState createState() => _MainViewState();
 }
 
