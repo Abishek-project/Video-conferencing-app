@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:video_conferencing/resources/auth_service.dart';
 import 'package:video_conferencing/screens/login_screen.view.dart';
 import 'package:video_conferencing/screens/main_view.dart';
@@ -8,7 +9,8 @@ import 'package:video_conferencing/screens/main_view.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -30,14 +32,14 @@ class MyApp extends StatelessWidget {
 
               if (user == null) {
                 // User is not authenticated, show login screen
-                return LoginScreen();
+                return const LoginScreen();
               } else {
                 // User is authenticated, show home screen
-                return MainView();
+                return const MainView();
               }
             } else {
               // Handle loading state
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             }
           },
         )

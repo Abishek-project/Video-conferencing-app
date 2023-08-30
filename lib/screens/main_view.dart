@@ -16,9 +16,9 @@ class _MainViewState extends State<MainView> {
   int _currentIndex = 0;
 
   final List<Widget> _sections = [
-    HomeView(),
-    const MeetHistory(),
-    const ProfileView()
+    const HomeView(),
+    const MeetHistoryPage(),
+    ProfileScreen()
   ];
 
   @override

@@ -14,7 +14,7 @@
   <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
     tools:ignore="ProtectedPermissions" /> 
    <application
-        android:label="video_conferencing"
+        android:label="GroupSync"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
