@@ -1,16 +1,9 @@
-# video_conferencing
+# Video_conferencing_app
 
-A new Flutter project.
+Welcome to GroupSync ! 
 
-## Getting Started
+Introducing our innovative video conferencing app built with the power of Flutter and Firebase. Seamlessly connecting individuals and teams, our app revolutionizes remote communication. Whether it's business meetings, virtual collaborations, or catching up with friends and family, our app provides a reliable and user-friendly platform for high-quality video conferencing.
 
-This project is a starting point for a Flutter application.
+![App UI](assets/GroupSyncUI-1.png)
+![App UI](assets/GroupsyncUI-2.png)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
