@@ -9,7 +9,7 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Stream<User?> get authStateChanges => _auth.authStateChanges();
-// Inside your onPressed callback
+
   void signInWithGoogle(context) async {
     _showLoadingDialog(context);
     final GoogleSignInAccount? googleSignInAccount =

@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:video_conferencing/resources/auth_service.dart';
 import 'package:video_conferencing/screens/login_screen.view.dart';
 import 'package:video_conferencing/screens/main_view.dart';
@@ -42,8 +41,6 @@ class MyApp extends StatelessWidget {
               return const CircularProgressIndicator();
             }
           },
-        )
-        // Set the initial screen to the login screen
-        );
+        ));
   }
 }

@@ -22,19 +22,17 @@ class LoginScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 12), // Adjust the spacing
+                const SizedBox(height: 12),
                 Text(
-                  'Start or Join New Meeting', // Add a description
+                  'Start or Join New Meeting',
                   style: GoogleFonts.poppins(
                     fontSize: 18,
                     color: Colors.white60,
                   ),
                 ),
-                // const SizedBox(height: 20),
                 Image.asset('assets/Telecommuting-rafiki.png'),
                 ElevatedButton(
                   onPressed: () {
-                    // Implement Google Sign-In logic
                     AuthService().signInWithGoogle(context);
                   },
                   child:

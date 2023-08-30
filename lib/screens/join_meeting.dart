@@ -49,8 +49,7 @@ class _JoinMeetingState extends State<JoinMeeting> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(70), // Adjust the radius as needed
+                borderRadius: BorderRadius.circular(70),
                 child: Image.asset(
                   "assets/groupCall.jpg",
                   width: 140,
@@ -80,7 +79,6 @@ class _JoinMeetingState extends State<JoinMeeting> {
                     hintText: 'Enter Channel Name',
                     hintStyle: GoogleFonts.poppins(
                       fontSize: 12,
-                      // fontWeight: FontWeight.w500,
                     ),
                     contentPadding: const EdgeInsets.all(10),
                   ),

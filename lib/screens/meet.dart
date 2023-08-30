@@ -172,20 +172,6 @@ class _MeetState extends State<Meet> {
               AgoraVideoViewer(
                 client: client,
                 layoutType: Layout.floating,
-                // enableHostControls: true,s
-                // disabledVideoWidget: Center(
-                //   child: Container(
-                //     width: 150,
-                //     height: 150,
-                //     decoration: BoxDecoration(
-                //       shape: BoxShape.circle,
-                //       image: DecorationImage(
-                //         image: NetworkImage(user!.photoURL!.toString()),
-                //         fit: BoxFit.cover,
-                //       ),
-                //     ),
-                //   ),
-                // ),
               ),
               AgoraVideoButtons(
                 verticalButtonPadding: 10,
@@ -200,7 +186,7 @@ class _MeetState extends State<Meet> {
                 right: 0,
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  color: Colors.transparent, // Use transparent color
+                  color: Colors.transparent,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
