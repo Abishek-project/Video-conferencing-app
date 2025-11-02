@@ -10,33 +10,47 @@ class AuthService {
 
   Stream<User?> get authStateChanges => _auth.authStateChanges();
 
-  void signInWithGoogle(context) async {
+  void signInWithGoogle(BuildContext context) async {
     _showLoadingDialog(context);
-    final GoogleSignInAccount? googleSignInAccount =
-        await GoogleSignIn().signIn();
 
-    if (googleSignInAccount != null) {
-      final GoogleSignInAuthentication googleSignInAuthentication =
+    try {
+      final GoogleSignInAccount? googleSignInAccount =
+          await GoogleSignIn().signIn();
+
+      if (googleSignInAccount == null) {
+        // User cancelled the sign-in
+        if (context.mounted) Navigator.pop(context);
+        return;
+      }
+
+      final GoogleSignInAuthentication googleAuth =
           await googleSignInAccount.authentication;
 
       final AuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: googleSignInAuthentication.accessToken,
-        idToken: googleSignInAuthentication.idToken,
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
       );
 
-      try {
-        final UserCredential authResult =
-            await FirebaseAuth.instance.signInWithCredential(credential);
-        final User? user = authResult.user;
+      final UserCredential authResult =
+          await FirebaseAuth.instance.signInWithCredential(credential);
 
-        if (user != null) {
-          Navigator.pop(context);
-          // Navigate to the home view
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const MainView()));
-        }
-      } catch (error) {
-        // Handle sign-in error
+      if (context.mounted) Navigator.pop(context); // close loading
+
+      final user = authResult.user;
+      if (user != null && context.mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => const MainView()),
+        );
+      }
+    } catch (e) {
+      if (context.mounted) Navigator.pop(context); // close loading
+      debugPrint("Google sign-in failed: $e");
+
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Sign-in failed: $e")),
+        );
       }
     }
   }
