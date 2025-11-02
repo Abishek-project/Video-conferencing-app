@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
 
     // Create a unique channel name using the current timestamp and random number
     String uniqueChannelName =
-        'Meeting_$randomNumber-${DateTime.now().millisecondsSinceEpoch}';
+        '$randomNumber-${DateTime.now().millisecondsSinceEpoch}';
     return uniqueChannelName;
   }
 
